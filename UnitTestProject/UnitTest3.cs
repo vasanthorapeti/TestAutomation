@@ -12,7 +12,7 @@ namespace UnitTestProject
             string[] lines = { "Bengaluru", "Karnatata", "India" };
             string result;
             System.IO.File.WriteAllLines(@"C:\BIECode\TestAutomation\WriteLines.txt", lines);
-            result = "test1";
+            result = "test";
             Assert.AreEqual("test", result);
         }
     }

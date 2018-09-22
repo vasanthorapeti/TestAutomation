@@ -60,6 +60,7 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="UnitTest2.cs" />
     <Compile Include="UnitTest3.cs" />
+    <Compile Include="LoginTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
