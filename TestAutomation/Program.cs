@@ -10,7 +10,7 @@ namespace TestAutomation
     {
         static void Main(string[] args)
         {
-            string[] lines = { "First line", "Second line", "Third line" };
+            string[] lines = { "Zero line", "Second line", "Third line" };
             System.IO.File.WriteAllLines(@"C:\BIECode\TestAutomation\WriteLines.txt", lines);
         }
     }
