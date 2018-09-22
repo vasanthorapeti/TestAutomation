@@ -17,7 +17,10 @@ namespace UnitTestProject
             //search.SendKeys("Karnataka");
 
             string[] lines = { "Bengaluru", "Karnatata", "India" };
+            string result;
             System.IO.File.WriteAllLines(@"C:\BIECode\TestAutomation\WriteLines.txt", lines);
+            result = "test";
+            Assert.AreEqual("test", result);
 
         }
     }
