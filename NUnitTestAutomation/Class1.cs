@@ -18,8 +18,9 @@ namespace NUnitTestAutomation
             string result;
       
             System.IO.File.WriteAllLines(@"C:\BIECode\TestAutomation\WriteLines.txt", lines);
-            System.IO.File.WriteAllText(@"C:\BIECode\TestAutomation\WriteLines.txt", newlocation);
+          
             result = "test";
+            Console.WriteLine(TestContext.Parameters["location"]);
             Assert.AreEqual("test", result);
         }
 
@@ -29,7 +30,8 @@ namespace NUnitTestAutomation
             string[] lines = { "Bengaluru", "Karnatata", "India" };
             string result;
             System.IO.File.WriteAllLines(@"C:\BIECode\TestAutomation\WriteLines.txt", lines);
-            result = "test1";
+            result = "test";
+            Console.WriteLine(TestContext.Parameters["testParameter1"]);
             Assert.AreEqual("test", result);
         }
     }
