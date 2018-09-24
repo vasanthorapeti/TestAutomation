@@ -18,8 +18,8 @@ namespace UnitTestProject
             IWebElement searchInput = driver.FindElement(By.Name("search"));
             searchInput.SendKeys("Karnataka");
             searchInput.SendKeys(Keys.Enter);
-            //string str = driver.FindElement(By.Id("firstHeading")).Text;
-            string str = "abc";
+            string str = driver.FindElement(By.Id("firstHeading")).Text;
+            //string str = "abc";
             Assert.AreEqual("Karnataka", str);
             System.Threading.Thread.Sleep(4000);
             driver.Quit();
