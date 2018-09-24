@@ -13,8 +13,10 @@ namespace NUnitTestAutomation
         [Test]
         public void LoginCMS()
         {
-            string[] lines = { "Bengaluru", "Karnatata", "India" };
+            string newlocation = TestContext.Parameters["location"];
+            string[] lines = { "Bengaluru", "Karnatata", "India", newlocation };
             string result;
+      
             System.IO.File.WriteAllLines(@"C:\BIECode\TestAutomation\WriteLines.txt", lines);
             result = "test";
             Assert.AreEqual("test", result);
