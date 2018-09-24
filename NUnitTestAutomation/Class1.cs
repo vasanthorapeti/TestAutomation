@@ -25,6 +25,7 @@ namespace NUnitTestAutomation
         }
 
         [Test]
+        [Category("Online")]
         public void LoginOnline()
         {
             string[] lines = { "Bengaluru", "Karnatata", "India" };

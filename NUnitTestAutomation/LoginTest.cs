@@ -13,12 +13,16 @@ namespace NUnitTestAutomation
         [Test]
         public void LoginCMS1()
         {
-            string[] lines = { "Bengaluru", "Karnatata", "India" };
-            string result;
-            System.IO.File.WriteAllLines(@"C:\BIECode\TestAutomation\WriteLines.txt", lines);
-            result = "test";
-            Console.WriteLine(TestContext.Parameters["testParameter1"]);
-            Assert.AreEqual("test", result);
+            IWebDriver driver = new ChromeDriver(@"C:\BIECode\ChromeDriver1");
+            driver.Navigate().GoToUrl("https://en.wikipedia.org/wiki/Main_Page");
+            IWebElement searchInput = driver.FindElement(By.Name("search"));
+            searchInput.SendKeys("Karnataka");
+            searchInput.SendKeys(Keys.Enter);
+            string str = driver.FindElement(By.Id("firstHeading")).Text;
+            //string str = "abc";
+            Assert.AreEqual("Karnataka", str);
+            System.Threading.Thread.Sleep(4000);
+            driver.Quit();
         }        
     }
 }
