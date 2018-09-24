@@ -29,7 +29,7 @@ namespace NUnitTestAutomation
             string[] lines = { "Bengaluru", "Karnatata", "India" };
             string result;
             System.IO.File.WriteAllLines(@"C:\BIECode\TestAutomation\WriteLines.txt", lines);
-            result = "test";
+            result = "test1";
             Assert.AreEqual("test", result);
         }
     }
