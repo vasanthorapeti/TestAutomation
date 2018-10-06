@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace NUnitTestAutomation
@@ -13,14 +9,15 @@ namespace NUnitTestAutomation
         [Test]
         public void LoginCMS()
         {
-            string newlocation = TestContext.Parameters.Get("location");
+            //string newlocation = TestContext.Parameters.Get("location");
+            string newlocation = System.Environment.GetEnvironmentVariable("location");
             string[] lines = { "Bengaluru", "Karnatata", "India", newlocation };
             string result;
       
             System.IO.File.WriteAllLines(@"C:\BIECode\TestAutomation\WriteLines.txt", lines);
           
             result = "test";
-            Console.WriteLine(TestContext.Parameters["location"]);
+            Console.WriteLine("This what I want to display " + newlocation);
             Assert.AreEqual("test", result);
         }
 
