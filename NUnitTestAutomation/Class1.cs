@@ -10,8 +10,9 @@ namespace NUnitTestAutomation
         public void LoginCMS()
         {
             string newlocation = TestContext.Parameters.Get("location");
+            string str = "another value";
           //  string newlocation = System.Environment.GetEnvironmentVariable("OneDrive");
-            string[] lines = { "Bengaluru", "Karnatata", "India", newlocation };
+            string[] lines = { "Bengaluru", "Karnatata", "India", newlocation, str };
             string result;
       
             System.IO.File.WriteAllLines(@"C:\BIECode\TestAutomation\WriteLines.txt", lines);
