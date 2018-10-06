@@ -9,8 +9,8 @@ namespace NUnitTestAutomation
         [Test]
         public void LoginCMS()
         {
-            //string newlocation = TestContext.Parameters.Get("location");
-            string newlocation = System.Environment.GetEnvironmentVariable("location");
+            string newlocation = TestContext.Parameters.Get("location");
+          //  string newlocation = System.Environment.GetEnvironmentVariable("OneDrive");
             string[] lines = { "Bengaluru", "Karnatata", "India", newlocation };
             string result;
       
