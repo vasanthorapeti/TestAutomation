@@ -1,5 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace NUnitTestAutomation
 {
@@ -9,6 +11,7 @@ namespace NUnitTestAutomation
         [Test]
         public void LoginCMS()
         {
+            /*
             string newlocation = TestContext.Parameters.Get("location");
             string str = "another value";
           //  string newlocation = System.Environment.GetEnvironmentVariable("OneDrive");
@@ -20,6 +23,17 @@ namespace NUnitTestAutomation
             result = "test";
             Console.WriteLine("This what I want to display " + newlocation);
             Assert.AreEqual("test", result);
+            */
+            IWebDriver driver = new ChromeDriver(@"C:\BIECode\ChromeDriver1");
+            driver.Navigate().GoToUrl(TestContext.Parameters.Get("URL"));
+            IWebElement searchInput = driver.FindElement(By.Name("search"));
+            searchInput.SendKeys(TestContext.Parameters.Get("SearchWord"));
+            searchInput.SendKeys(Keys.Enter);
+            string str = driver.FindElement(By.Id("firstHeading")).Text;
+            //string str = "abc";
+            Assert.AreEqual("Karnataka", str);
+            System.Threading.Thread.Sleep(4000);
+            driver.Quit();
         }
 
         [Test]
