@@ -1,0 +1,9 @@
+pull_request_rules:
+  - name: Promote changes to UAT
+    conditions:
+      - base=master
+      - label=ReleaseToUAT
+    actions:
+      backport:
+        branches:
+          - release-candidate
